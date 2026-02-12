@@ -13,13 +13,29 @@
 html,body{height:100%}
 html{scroll-behavior:smooth}
 
+/* ===== FONDO FIJO REAL (ARREGLA MOBILE) ===== */
 body{
-  background:url('fondo.png') center/cover no-repeat fixed;
+  background:none;
   color:#fff;
   overflow-x:hidden;
 }
 
-.overlay{background:rgba(0,0,0,.45)}
+.bg-fixed{
+  position:fixed;
+  inset:0;
+  background:url('fondo.png') center center / cover no-repeat;
+  z-index:-2;
+}
+
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:-1;
+}
+
+/* overlay de contenido */
+.overlay{background:transparent}
 
 .container{
   max-width:1500px;
@@ -73,6 +89,7 @@ body{
 
 /* SECCIONES */
 section{padding:140px 0}
+
 
 /* CARDS */
 .cards{
@@ -412,6 +429,11 @@ footer{
 </head>
 
 <body>
+
+<!-- FONDO GLOBAL -->
+<div class="bg-fixed"></div>
+<div class="bg-overlay"></div>
+
 <div class="overlay">
 
 <section class="hero container">
@@ -430,6 +452,7 @@ footer{
     <a href="#web"><div class="card" data-aos="fade-up"><img src="servicios/web.png"></div></a>
   </div>
 </section>
+
 
 <section class="container" id="acerca">
   <h2 class="section-title" data-aos="fade-up">Acerca de Nosotros</h2>
@@ -616,6 +639,8 @@ AOS.init({once:true,duration:900,easing:'ease-out-cubic'});
 </script>
 </body>
 </html>
+
+
 
 
 
