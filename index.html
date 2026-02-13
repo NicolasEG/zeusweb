@@ -664,11 +664,9 @@ Además colocamos <strong>cerraduras magnéticas de alta seguridad</strong> idea
         contacto@zeuscomputers.com
       </p>
 
-      <div style="display:flex;gap:14px;margin-top:12px;justify-content:center;">
-  <a href="https://www.instagram.com/zeuscomputers?igsh=MWhwc2tuOHY1aGNtMg==" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="28" alt="Instagram">
-  </a>
-</div>
+      <a href="#" id="igBtn" aria-label="Instagram">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="28">
+</a>
 
         <a href="https://www.facebook.com/gonzalo.sandobal.505" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="28">
@@ -711,9 +709,38 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
+  <script>
+document.getElementById("igBtn").addEventListener("click", function(e){
+  e.preventDefault();
+
+  const username = "zeuscomputers";
+  const app = "instagram://user?username=" + username;
+  const web = "https://www.instagram.com/" + username + "/";
+
+  let opened = false;
+
+  const timer = setTimeout(function () {
+    if (!opened) {
+      window.open(web, "_blank");
+    }
+  }, 1500);
+
+  document.addEventListener("visibilitychange", function vis() {
+    if (document.hidden) {
+      opened = true;
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", vis);
+    }
+  });
+
+  window.location.href = app;
+});
+</script>
+
 
 </body>
 </html>
+
 
 
 
