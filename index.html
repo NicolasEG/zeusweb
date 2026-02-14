@@ -664,7 +664,7 @@ Además colocamos <strong>cerraduras magnéticas de alta seguridad</strong> idea
         contacto@zeuscomputers.com
       </p>
 
-      <a href="#" id="igBtn" aria-label="Instagram">
+     <a href="/instagram.html">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="28">
 </a>
 
@@ -708,60 +708,53 @@ window.addEventListener("scroll", () => {
     btn.classList.remove("show");
   }
 });
-</script>
-  <script>
-document.getElementById("igBtn").addEventListener("click", function(e){
-  e.preventDefault();
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abrir Instagram</title>
 
-  const username = "zeuscomputers";
-  const app = "instagram://user?username=" + username;
-  const web = "https://www.instagram.com/" + username + "/";
+<style>
+body{
+  font-family:system-ui;
+  background:#0f172a;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  text-align:center;
+}
+.card{
+  background:#111827;
+  padding:30px;
+  border-radius:18px;
+  max-width:320px;
+  box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  background:#E1306C;
+  padding:14px 22px;
+  border-radius:12px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
+</head>
 
-  let opened = false;
+<body>
+<div class="card">
+  <h2>Zeus Computers</h2>
+  <p>Para continuar, abrí nuestro perfil en Instagram</p>
 
-  const timer = setTimeout(function () {
-    if (!opened) {
-      window.open(web, "_blank");
-    }
-  }, 1500);
-
-  document.addEventListener("visibilitychange", function vis() {
-    if (document.hidden) {
-      opened = true;
-      clearTimeout(timer);
-      document.removeEventListener("visibilitychange", vis);
-    }
-  });
-
-  window.location.href = app;
-});
-</script>
-
-
+  <a class="btn" href="https://www.instagram.com/zeuscomputers/" target="_blank">
+    Abrir en Instagram
+  </a>
+</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
