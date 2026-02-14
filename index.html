@@ -479,7 +479,7 @@ if ('scrollRestoration' in history) {
 #intro {
     position: fixed;
     inset: 0;
-    background: #020a1a;              /* negro total */
+    background: #000;              /* negro total */
     z-index: 999999999;
     display: flex;
     justify-content: center;
@@ -504,6 +504,8 @@ if ('scrollRestoration' in history) {
     max-width: 80vw;
     filter: none;
     opacity: .95;
+    filter: brightness(.55) contrast(1.2);
+    mix-blend-mode:screen;
 }
 
 .intro-text {
@@ -845,6 +847,7 @@ window.addEventListener("load", () => {
 </style>
 </body>
 </html>
+
 
 
 
