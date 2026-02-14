@@ -475,33 +475,58 @@ if (window.location.hash) {
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-    #preloader {
+/* =========================
+   INTRO CINEMATOGRAFICO
+========================= */
+
+#intro {
     position: fixed;
     inset: 0;
-    background: #0a0a0a;
+    background: #000;              /* negro total */
+    z-index: 999999999;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999999;
-    transition: opacity .6s ease, visibility .6s;
+    opacity: 1;
+    transition: opacity 1.2s ease;
 }
 
-#preloader.hidden {
+#intro.hide {
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
 }
 
-.loader-content {
+.intro-center {
     text-align: center;
     color: white;
+    animation: introZoom 1.5s ease;
 }
 
-.loader-video {
-    width: 260px;
-    max-width: 70vw;
-    height: auto;
-    margin-bottom: 15px;
+#introVideo {
+    width: 420px;
+    max-width: 80vw;
+    filter: drop-shadow(0 0 40px rgba(0,150,255,.6));
 }
+
+.intro-text {
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: .7;
+}
+
+/* efecto tipo cine */
+@keyframes introZoom {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 </script>
 
@@ -510,25 +535,20 @@ if ('scrollRestoration' in history) {
 
   <body>
 
-    <!-- ================= PRELOADER ================= -->
-    <div id="preloader">
-        <div class="loader-content">
+<!-- INTRO CINE -->
+<div id="intro">
 
-            <video class="loader-video" autoplay muted playsinline>
-                <source src="media/loader.mp4" type="video/mp4">
-            </video>
+    <div class="intro-center">
 
-            <p>Cargando sitio...</p>
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="media/loader.mp4" type="video/mp4">
+        </video>
 
-        </div>
+        <div class="intro-text">Cargando experiencia...</div>
+
     </div>
-    <!-- ============================================= -->
 
-
-    <!-- TU WEB ARRANCA ACA -->
-    <header>
-        ...
-    </header>
+</div>
 
 <!-- FONDO GLOBAL -->
 <div class="bg-fixed"></div>
@@ -760,33 +780,39 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
-  <script>
-window.addEventListener("load", function () {
+    
+<script>
+document.body.style.overflow = "hidden";
 
-    document.body.style.overflow = "hidden";
+window.addEventListener("load", () => {
 
-    const preloader = document.getElementById("preloader");
-    const minTime = 2200; // tiempo minimo visible
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+
+    // Duración mínima estilo intro cine
+    const minDuration = 3200;
     const start = Date.now();
 
-    function hideLoader() {
-        preloader.classList.add("hidden");
+    function endIntro() {
+
+        intro.classList.add("hide");
 
         setTimeout(() => {
-            preloader.style.display = "none";
+            intro.remove();
             document.body.style.overflow = "auto";
-        }, 600);
+        }, 1200);
     }
 
     const elapsed = Date.now() - start;
-    if (elapsed < minTime) {
-        setTimeout(hideLoader, minTime - elapsed);
-    } else {
-        hideLoader();
-    }
+
+    // Espera que termine de cargar la web Y el tiempo mínimo
+    const remaining = Math.max(0, minDuration - elapsed);
+
+    setTimeout(endIntro, remaining);
 
 });
 </script>
+
 
 
 <!-- Firma de desarrollo -->
@@ -819,5 +845,6 @@ window.addEventListener("load", function () {
 </style>
 </body>
 </html>
+
 
 
