@@ -475,10 +475,60 @@ if (window.location.hash) {
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
+    #preloader {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    transition: opacity .6s ease, visibility .6s;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.loader-video {
+    width: 260px;
+    max-width: 70vw;
+    height: auto;
+    margin-bottom: 15px;
+}
+
 </script>
 
 
 <body>
+
+  <body>
+
+    <!-- ================= PRELOADER ================= -->
+    <div id="preloader">
+        <div class="loader-content">
+
+            <video class="loader-video" autoplay muted playsinline>
+                <source src="media/loader.mp4" type="video/mp4">
+            </video>
+
+            <p>Cargando sitio...</p>
+
+        </div>
+    </div>
+    <!-- ============================================= -->
+
+
+    <!-- TU WEB ARRANCA ACA -->
+    <header>
+        ...
+    </header>
 
 <!-- FONDO GLOBAL -->
 <div class="bg-fixed"></div>
@@ -710,6 +760,34 @@ window.addEventListener("scroll", () => {
   }
 });
 </script>
+  <script>
+window.addEventListener("load", function () {
+
+    document.body.style.overflow = "hidden";
+
+    const preloader = document.getElementById("preloader");
+    const minTime = 2200; // tiempo minimo visible
+    const start = Date.now();
+
+    function hideLoader() {
+        preloader.classList.add("hidden");
+
+        setTimeout(() => {
+            preloader.style.display = "none";
+            document.body.style.overflow = "auto";
+        }, 600);
+    }
+
+    const elapsed = Date.now() - start;
+    if (elapsed < minTime) {
+        setTimeout(hideLoader, minTime - elapsed);
+    } else {
+        hideLoader();
+    }
+
+});
+</script>
+
 
 <!-- Firma de desarrollo -->
 <footer class="firma-ng">
@@ -741,4 +819,5 @@ window.addEventListener("scroll", () => {
 </style>
 </body>
 </html>
+
 
