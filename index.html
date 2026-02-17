@@ -424,6 +424,77 @@ footer{
     font-size:.9rem;
   }
 
+  /* ===== TRIALES ===== */
+
+.trial-box{
+  text-align:center;
+  padding:40px 30px;
+}
+
+.trial-header h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.trial-header p{
+  max-width:700px;
+  margin:0 auto 25px;
+  opacity:.85;
+}
+
+.trial-button{
+  display:inline-block;
+  padding:14px 32px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#4e7cff,#3a5edb);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s;
+}
+
+.trial-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* CARDS */
+
+.trial-cards{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.trial-card{
+  padding:20px;
+  border-radius:18px;
+  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.05);
+  transition:.25s;
+}
+
+.trial-card:hover{
+  transform:translateY(-5px);
+}
+
+.trial-card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+
+.trial-card h4{
+  margin:10px 0 5px;
+}
+
+.trial-card p{
+  font-size:14px;
+  opacity:.8;
+}
+
+  
 }
   /* ===== BOTON VOLVER ARRIBA ===== */
 .scroll-top{
@@ -688,6 +759,46 @@ Además colocamos <strong>cerraduras magnéticas de alta seguridad</strong> idea
   </div>
 </section>
 
+  <section class="container" id="triales">
+  <h2 class="section-title" data-aos="fade-up">Probá nuestros sistemas</h2>
+
+  <div class="glass-box trial-box" data-aos="fade-up">
+
+    <div class="trial-header">
+      <h3>Descargá gratis nuestros triales</h3>
+      <p>
+        Probá nuestros software sin costo y descubrí cómo pueden mejorar la gestión de tu negocio.
+        Instalá, usá y evaluá cada sistema antes de decidir.
+      </p>
+
+      <a href="#contacto" class="trial-button">Descargar Triales</a>
+    </div>
+
+    <div class="trial-cards">
+
+      <div class="trial-card">
+        <img src="img/soft/label.png" alt="POSLabel">
+        <h4>POSLabel</h4>
+        <p>Creación de etiquetas con código de barras y QR.</p>
+      </div>
+
+      <div class="trial-card">
+        <img src="img/soft/presupuestos.png" alt="Presupuestos Técnicos">
+        <h4>Presupuestos Técnicos</h4>
+        <p>Generación de presupuestos, órdenes de trabajo y seguimiento.</p>
+      </div>
+
+      <div class="trial-card">
+        <img src="img/soft/poskiosco.png" alt="POSKiosco">
+        <h4>POSKiosco</h4>
+        <p>Sistema de ventas, caja y stock para comercios.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <section class="container" id="web">
   <h2 class="section-title" data-aos="fade-up">Páginas Web</h2>
   <div class="glass-box" data-aos="fade-up">
@@ -847,6 +958,7 @@ window.addEventListener("load", () => {
 </style>
 </body>
 </html>
+
 
 
 
