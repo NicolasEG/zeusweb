@@ -63,7 +63,6 @@ body{
   justify-content:center;
   align-items:center;
 }
-
 .logo-wrap::before{
   content:"";
   position:absolute;
@@ -88,6 +87,7 @@ body{
 
 /* SECCIONES */
 section{padding:140px 0}
+
 /* CARDS */
 .cards{
   display:grid;
@@ -134,7 +134,6 @@ section{padding:140px 0}
   padding:40px;
   margin-bottom:190px;
 }
-
 /* GALERIA */
 .gallery{
   display:grid;
@@ -171,13 +170,13 @@ section{padding:140px 0}
   .logo-wrap::after{width:500px;height:500px;filter:blur(80px)}
   .cards{grid-template-columns:repeat(2,1fr)}
 }
+
 footer{
   text-align:center;
   padding:40px 0;
   color:#RRGGBBAA;
   font-size:.85rem;
 }
-
 /* === BOTON WHATSAPP CENTRADO HORIZONTAL === */
 .whatsapp-float{
   position:fixed;
@@ -248,7 +247,6 @@ footer{
 .footer-brand img{
   width:140px;
 }
-
 .footer-bottom{
   border-top:1px solid #ddd;
   margin-top:40px;
@@ -286,6 +284,7 @@ footer{
   object-fit:cover;
   border-radius:14px;
 }
+
 /* imagen central CCTV */
 #service .gallery img.center{
   transform:scale(1.12);
@@ -311,7 +310,6 @@ footer{
   transform:scale(1.12);
   z-index:2;
 }
-
 /* ========================= */
 /* ===== MOBILE FIXES ====== */
 /* ========================= */
@@ -422,6 +420,87 @@ footer{
     padding:12px 20px;
     font-size:.9rem;
   }
+}
+/* ===============================
+   FIX TRIALES (AGREGADO)
+   =============================== */
+
+.trial-box{
+  text-align:center;
+  padding:40px 30px;
+}
+
+.trial-header h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.trial-header p{
+  max-width:700px;
+  margin:0 auto 25px;
+  opacity:.85;
+}
+
+.trial-button{
+  display:inline-block;
+  padding:14px 32px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#4e7cff,#3a5edb);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s;
+}
+
+.trial-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.trial-cards{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:28px;
+  flex-wrap:nowrap;
+}
+
+.trial-card{
+  width:280px;
+  min-width:280px;
+  padding:18px;
+  border-radius:18px;
+  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.05);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.trial-card:hover{
+  transform:translateY(-6px);
+}
+
+.trial-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+
+.trial-card h4{
+  margin:10px 0 6px;
+  font-size:18px;
+}
+
+.trial-card p{
+  font-size:14px;
+  opacity:.8;
+  max-width:220px;
 }
 /* ===== BOTON VOLVER ARRIBA ===== */
 .scroll-top{
@@ -548,7 +627,6 @@ if ('scrollRestoration' in history) {
   <div data-aos="fade-right"><img src="texto.png" class="hero-texto"></div>
   <div class="logo-wrap" data-aos="zoom-in"><img src="logo.png" class="logo"></div>
 </section>
-
 <section class="container">
   <div class="cards">
     <a href="#pc"><div class="card" data-aos="fade-up"><img src="servicios/pcfinal.png"></div></a>
@@ -638,6 +716,7 @@ if ('scrollRestoration' in history) {
     </div>
   </div>
 </section>
+
 <section class="container" id="cctv">
   <h2 class="section-title" data-aos="fade-up">CCTV y Seguridad</h2>
   <div class="glass-box" data-aos="fade-up">
@@ -706,6 +785,7 @@ if ('scrollRestoration' in history) {
     </div>
   </div>
 </section>
+
 <section class="container" id="web">
   <h2 class="section-title" data-aos="fade-up">Páginas Web</h2>
   <div class="glass-box" data-aos="fade-up">
@@ -719,7 +799,6 @@ if ('scrollRestoration' in history) {
     </div>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="footer-grid">
 
